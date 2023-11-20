@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "doctors", to: "doctors#index"
-  get "doctors/new", to: "doctor#new", as: :add_doctor
-  post "doctors", to: "doctor#create"
+  get "doctors/new", to: "doctors#new", as: :add_doctor
+  post "doctors", to: "doctors#create"
   get "doctors/:id", to: "doctors#show", as: :doctor
   get "doctors/:id/edit", to: "doctors#edit", as: :edit_doctor
   patch "doctors/:id", to: "doctors#update"

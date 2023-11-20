@@ -8,7 +8,6 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    raise
     @doctor = Doctor.new(doctor_params)
     @doctor.save
     redirect_to doctors_path
