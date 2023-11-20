@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+Doctor.destroy_all
+puts "cleaning the database"
+puts "creating new files"
+5.times do
+  Doctor.create(first_name: Faker::GreekPhilosophers.name, last_name: Faker::Adjective.negative, title: ["Prof", "Doctor"].sample, available: [true, false].sample, specialty: ["Dermatology", "Psychitry", "Surgery", "Neurology", "Pediatrics", "General Surgery"].sample, experience: Random.rand(1..30))
+end
