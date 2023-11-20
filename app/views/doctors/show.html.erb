@@ -1,0 +1,6 @@
+<h1>This is the show file and shows a single doctor</h1>
+<div>
+  <li><%= "#{@doctor.title}.#{@doctor.first_name} #{@doctor.last_name.capitalize}" %></li>
+</div>
+
+<%= link_to "Delete", delete_doctor_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

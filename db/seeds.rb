@@ -11,7 +11,13 @@ require 'faker'
 
 Doctor.destroy_all
 puts "cleaning the database"
-puts "creating new files"
 5.times do
-  Doctor.create(first_name: Faker::GreekPhilosophers.name, last_name: Faker::Adjective.negative, title: ["Prof", "Doctor"].sample, available: [true, false].sample, specialty: ["Dermatology", "Psychitry", "Surgery", "Neurology", "Pediatrics", "General Surgery"].sample, experience: Random.rand(1..30))
+  Doctor.create(first_name: Faker::GreekPhilosophers.name,
+  last_name: Faker::Name.last_name,
+  title: ["Prof", "Doctor"].sample,
+  available: [true, false].sample,
+  specialty: ["Dermatology", "Psychitry", "Surgery", "Neurology", "Pediatrics", "General Surgery"].sample,
+  experience: Random.rand(1..30))
 end
+
+puts "creating new files"
