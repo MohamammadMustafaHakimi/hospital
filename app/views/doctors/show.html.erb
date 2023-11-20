@@ -3,4 +3,5 @@
   <li><%= "#{@doctor.title}.#{@doctor.first_name} #{@doctor.last_name.capitalize}" %></li>
 </div>
 
-<%= link_to "Delete", delete_doctor_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to "Edit", edit_doctor_path %>
+<%= link_to "Delete", doctor_path(@doctor), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
