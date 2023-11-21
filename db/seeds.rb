@@ -14,10 +14,10 @@ puts "cleaning the database"
 5.times do
   Doctor.create(first_name: Faker::GreekPhilosophers.name,
   last_name: Faker::Name.last_name,
-  title: ["Prof", "Doctor"].sample,
+  title: ["Prof.", "Dr."].sample,
   available: [true, false].sample,
-  specialty: ["Dermatology", "Psychitry", "Surgery", "Neurology", "Pediatrics", "General Surgery"].sample,
-  experience: Random.rand(1..30))
+  specialty: ["Dermatologist, Pneumologist, Cardiolgist, Dentist, GP"].sample,
+  experience: Random.rand(2..6))
 end
 
 puts "creating new files"
