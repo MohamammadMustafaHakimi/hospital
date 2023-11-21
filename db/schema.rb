@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_20_115111) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_21_104853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,9 +20,29 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_20_115111) do
     t.string "title"
     t.boolean "available"
     t.string "specialty"
-    t.float "experience"
+    t.integer "experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "educations", force: :cascade do |t|
+    t.string "university"
+    t.string "degree_name"
+    t.bigint "doctor_id", null: false
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["doctor_id"], name: "index_educations_on_doctor_id"
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "insurance"
+    t.boolean "cured"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "educations", "doctors"
 end
