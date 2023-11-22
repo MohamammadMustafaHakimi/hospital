@@ -1,5 +1,6 @@
 class DoctorsController < ApplicationController
   before_action :find_doctor, only: [:show, :edit, :update, :destroy]
+
   def index
     @doctors = Doctor.all
   end
@@ -27,6 +28,7 @@ class DoctorsController < ApplicationController
     @doctor.update(doctor_params)
     redirect_to doctor_path(@doctor)
   end
+
 
   def destroy
     # @doctor = Doctor.find(params[:id])

@@ -1,7 +1,23 @@
 <h1>This is the show file and shows a single doctor</h1>
+
+<h2>Doctor Basic Info.</h2>
 <div>
-  <li><%= "#{@doctor.title}.#{@doctor.first_name} #{@doctor.last_name.capitalize}" %></li>
+  <%= "Title: #{@doctor.title}"%><br>
+  <%= "First Name: #{@doctor.first_name}"%><br>
+  <%= "Last Name: #{@doctor.last_name.capitalize}"%><br>
+  <%= "Specialty: #{@doctor.specialty}"%>
 </div>
+
+<h2>Doctor Education Info.</h2>
+<% @doctor.educations.each do |education| %>
+        <div>
+          <%= "University: #{education.university}"%><br>
+          <%= "Degree Name: #{education.degree_name}"%><br>
+          <%= "Score: #{education.score}"%>
+        </div>
+        <hr>
+<% end %>
+
 
 <%= link_to "Edit", edit_doctor_path %>
 <%= link_to "Delete", doctor_path(@doctor), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>

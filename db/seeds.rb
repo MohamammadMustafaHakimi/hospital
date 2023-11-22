@@ -8,16 +8,43 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 require 'faker'
-
+puts "destroying record old doctors"
 Doctor.destroy_all
-puts "cleaning the database"
+puts "adding new doctors"
 5.times do
   Doctor.create(first_name: Faker::GreekPhilosophers.name,
   last_name: Faker::Name.last_name,
   title: ["Prof.", "Dr."].sample,
   available: [true, false].sample,
-  specialty: ["Dermatologist, Pneumologist, Cardiolgist, Dentist, GP"].sample,
+  specialty: ["Dermatologist", "Pneumologist", "Cardiolgist", "Dentist", "GP"].sample,
   experience: Random.rand(2..6))
+
 end
 
-puts "creating new files"
+puts "destroying education record of old doctors"
+Education.destroy_all
+puts "creating education"
+5.times do
+  Education.create(university: Faker::University.name, degree_name: Faker::Educator.course, score: Random.rand(50..100), doctor: Doctor.all.sample)
+end
+
+puts "deleting records of old patients"
+Patient.destroy_all
+puts "adding patients"
+5.times do
+  Patient.create(first_name: Faker::GreekPhilosophers.name,
+  last_name: Faker::Name.last_name,
+  insurance: ["Private", "Public"].sample,
+  cured: [true, false].sample)
+end
+
+puts "deleting records of old appointments"
+Appointment.destroy_all
+puts "adding appoinetments"
+5.times do
+  Appointment.create(cause: Faker::GreekPhilosophers.name,
+  urgent: [true, false].sample,
+  date: (Date.today + rand(1..365)).to_s,
+  doctor: Doctor.all.sample,
+  patient: Patient.all.sample)
+end

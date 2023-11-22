@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
+  has_many :appointments
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :insurance, presence: true, inclusion: { in: %w(Private Public)}
+  validates :insurance, inclusion: { in: %w(Private Public)}
 end

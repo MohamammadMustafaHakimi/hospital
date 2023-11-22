@@ -1,5 +1,6 @@
 class Doctor < ApplicationRecord
-  has_many :educations
+  has_many :educations, dependent: :destroy
+  has_many :appointments
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :title, presence: true, inclusion: { in: %w(Prof. Dr.)}

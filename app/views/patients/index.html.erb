@@ -1,0 +1,11 @@
+
+<h1>All of the uncured patients</h1>
+<% @patients.each do |patient|%>
+  <% if !patient.cured %>
+    <%= "##{patient.id}" %>
+    <%= link_to "#{patient.first_name} #{patient.last_name}", patient_path(patient) %>
+  <hr>
+  <% end %>
+<% end%>
+
+<%= link_to "Add Patients", new_patient_path %>
