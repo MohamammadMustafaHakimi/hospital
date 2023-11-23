@@ -11,8 +11,11 @@ class DoctorsController < ApplicationController
 
   def create
     @doctor = Doctor.new(doctor_params)
-    @doctor.save
-    redirect_to doctors_path
+    if @doctor.save
+      redirect_to doctors_path
+    else
+      render 'new'
+    end
   end
 
   def show

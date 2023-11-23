@@ -1,7 +1,7 @@
 class EducationsController < ApplicationController
 
   def index
-    @education = Education.all
+    @educations = Education.all
   end
 
   def show
@@ -25,6 +25,7 @@ class EducationsController < ApplicationController
   end
 
   def edit
+    @education = Education.find(params[:id])
   end
 
   def update
@@ -36,6 +37,5 @@ class EducationsController < ApplicationController
   def education_params
     params.require(:education).permit(:university, :degree_name, :score)
   end
-
 
 end

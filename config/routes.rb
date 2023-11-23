@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     resources :educations
   end
 
-  resources :patients
+  resources :patients do
+    resources :appointments
+  end
+
   # get "doctors", to: "doctors#index"
   # get "doctors/new", to: "doctors#new", as: :add_doctor
   # post "doctors", to: "doctors#create"

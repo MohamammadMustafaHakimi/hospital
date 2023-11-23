@@ -6,3 +6,13 @@
 
 <%= link_to "Delete", patient_path(@patient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <%= link_to "Edit", edit_patient_path%>
+
+<h3>Appointments</h3>
+
+<% @patient.appointments.each do |appointment| %>
+        <div>
+          <%= "Appointment Date: #{appointment.date}"%><br>
+          <%= "Doctor: #{appointment.doctor}"%><br>
+        </div>
+        <hr>
+<% end %>

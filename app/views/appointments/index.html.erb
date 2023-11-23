@@ -1,0 +1,24 @@
+<h1>This is the page for all of the appointements of the <%= "#{@patient.first_name} #{@patient.last_name}" %></h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">date</th>
+        <th scope="col">urgent?</th>
+        <th scope="col">cause</th>
+        <th scope="col">doctor</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <th scope="row"><%= appointment.id %></th>
+        <td><%= appointment.date %></td>
+        <td><%= appointment.urgent ? "yes" : "no" %></td>
+        <td><%= appointment.cause %></td>
+        <td><%= "#{appointment.doctor.title} #{appointment.doctor.first_name} #{appointment.doctor.last_name.capitalize}" %></td>
+      </tr>
+    </tbody>
+    <% end%>
+  </table>

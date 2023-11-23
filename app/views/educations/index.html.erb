@@ -1,0 +1,11 @@
+<h1>This is the page for all of the educations of a doctor</h1>
+<% @educations.each do |education| %>
+        <div>
+          <%= "University: #{education.university}"%><br>
+          <%= "Degree Name: #{education.degree_name}"%><br>
+          <%= "Score: #{education.score}"%>
+        </div>
+        <hr>
+<% end %>
+
+<%= link_to "Add education", new_doctor_education_path %>
