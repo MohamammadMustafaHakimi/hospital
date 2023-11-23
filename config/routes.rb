@@ -9,13 +9,15 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "doctors#index"
   resources :doctors do
-    resources :educations
+    resources :educations, only: [:new, :create]
   end
+
+  resources :educations, only: [:edit, :update]
 
   resources :patients do
     resources :appointments
   end
-  
+
 
   # get "doctors", to: "doctors#index"
   # get "doctors/new", to: "doctors#new", as: :add_doctor

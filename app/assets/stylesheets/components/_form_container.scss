@@ -1,0 +1,11 @@
+
+.form_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 960px; /* 20px smaller, to fit the paddings on the sides */
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 20px;
+
+}

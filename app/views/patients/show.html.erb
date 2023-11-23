@@ -4,6 +4,7 @@
 <%= "Last Name:#{@patient.last_name}" %><br>
 <%= "Insurance:#{@patient.insurance}" %>
 
+<%= link_to "Add Appointment",  new_patient_appointment_path%>
 <%= link_to "Delete", patient_path(@patient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <%= link_to "Edit", edit_patient_path%>
 

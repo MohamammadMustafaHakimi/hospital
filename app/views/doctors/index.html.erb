@@ -1,10 +1,18 @@
 <h1>This is the index file and lists all the doctors</h1>
-<ul>
+
+
+
+<div class="card-group">
   <% @doctors.each do |doctor| %>
-    <li>
-      <%= link_to "#{doctor.title}.#{doctor.first_name} #{doctor.last_name.capitalize}", doctor_path(doctor) %>
-    </li>
-    <%#="#{doctor.first_name} #{doctor.last_name}"%>
+  <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Header</div>
+      <div class="card-body">
+      <h5 class="card-title"><%= link_to "#{doctor.title}.#{doctor.first_name} #{doctor.last_name.capitalize}", doctor_path(doctor) %></h5>
+      <p class="card-text"><%= doctor.available ? "available" : "unavailable" %></p>
+      </div>
+    </div>
   <% end %>
-</ul>
-<%= link_to "Add new Doctor", new_doctor_path%>
+</div>
+
+
+<%= link_to "Add new Doctor", new_doctor_path, class:"btn btn-secondary btn-lg"%>

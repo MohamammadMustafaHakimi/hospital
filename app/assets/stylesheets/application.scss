@@ -10,3 +10,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  background-color: #eee;
+}
+
+h1 {
+  color: red
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
