@@ -7,4 +7,22 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "doctors#index"
+  resources :doctors do
+    resources :educations
+  end
+
+  resources :patients do
+    resources :appointments
+  end
+
+  # get "doctors", to: "doctors#index"
+  # get "doctors/new", to: "doctors#new", as: :add_doctor
+  # post "doctors", to: "doctors#create"
+  # get "doctors/:id", to: "doctors#show", as: :doctor
+  # get "doctors/:id/edit", to: "doctors#edit", as: :edit_doctor
+  # patch "doctors/:id", to: "doctors#update"
+  # delete "doctors/:id", to: "doctors#destroy", as: :delete_doctor
+
+
 end

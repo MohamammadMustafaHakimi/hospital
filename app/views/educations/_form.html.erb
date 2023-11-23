@@ -1,0 +1,6 @@
+<%= simple_form_for [@doctor, @education] do |f| %>
+  <%= f.input :university, label: 'University Name', error: 'Username is mandatory, please specify one' %>
+  <%= f.input :degree_name, label: 'Degree Name', hint: 'No special characters.' %>
+  <%= f.input :score, placeholder: 'if the score is under 50, the doctor is underqualified' %>
+  <%= f.button :submit %>
+<% end %>
