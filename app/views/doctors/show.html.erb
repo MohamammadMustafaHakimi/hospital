@@ -18,7 +18,7 @@
           <%= "Degree Name: #{education.degree_name}"%><br>
           <%= "Score: #{education.score}"%>
         </div>
-<%= link_to "Edit", edit_doctor_education_path(@doctor), class:"btn btn-secondary btn-lg"%>
+<%= link_to "Edit", edit_doctor_education_path(@doctor, education.id), class:"btn btn-secondary btn-lg"%>
         <hr>
 <% end %>
 
