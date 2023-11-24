@@ -1,17 +1,20 @@
-<%# can implement bootstrap here %>
-<h3>Basic Patient Info.</h3>
-<%= "First Name:#{@patient.first_name}" %><br>
-<%= "Last Name:#{@patient.last_name}" %><br>
-<%= "Insurance:#{@patient.insurance}" %>
+<h1>This is the show file and shows a single patient</h1>
 
-<%= link_to "Add Appointment",  new_patient_appointment_path(@patient)%>
-<%= link_to "Delete", patient_path(@patient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-<%= link_to "Edit", edit_patient_path%>
 
-<h3>Appointments</h3>
+<h2>Basic Patient Info.</h2>
+<div class="mb-3">
+  <%= "First Name:#{@patient.first_name}" %><br>
+  <%= "Last Name:#{@patient.last_name}" %><br>
+  <%= "Insurance:#{@patient.insurance}" %>
+</div>
 
+<%= link_to "Add Appointment",  new_patient_appointment_path(@patient), class:"btn btn-secondary btn-lg"%>
+<%= link_to "Edit", edit_patient_path, class:"btn btn-secondary btn-lg"%>
+<%= link_to "Delete", patient_path(@patient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-warning btn-lg" %>
+
+<h2 class="mt-5 mb-3">Appointments</h2>
 <% @patient.appointments.each do |appointment| %>
-        <div>
+        <div class="mb-3">
           <%= "Appointment Date: #{appointment.date}"%><br>
           <%= "Doctor: #{appointment.doctor.title} #{appointment.doctor.first_name} #{appointment.doctor.last_name}"%><br>
         </div>
