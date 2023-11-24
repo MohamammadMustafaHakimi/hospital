@@ -29,6 +29,9 @@ class EducationsController < ApplicationController
   end
 
   def update
+    @education = Education.find(params[:id])
+    @education.update(education_params)
+    redirect_to doctor_path(@education.doctor)
 
   end
 

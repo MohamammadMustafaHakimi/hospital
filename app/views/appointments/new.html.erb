@@ -1,9 +1,10 @@
-<h1>This is the page for creating new appointements</h1>
-<%= simple_form_for [@patient, @appointment] do |f| %>
+<div class="form_container">
+  <h1>This is the page for creating new appointements</h1>
+  <%= simple_form_for [@patient, @appointment] do |f| %>
   <%= f.input :date, label: 'Date', error: 'Cannot be in the past' %>
   <%= f.input :urgent, label: 'Urgent'%>
   <%= f.input :cause, label: 'Cause'%>
   <%= f.association :doctor, collection: Doctor.where(available: true), label_method: :create_collection_tag  %>
-  <%= f.button :submit %>
-<% end %>
-
+  <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

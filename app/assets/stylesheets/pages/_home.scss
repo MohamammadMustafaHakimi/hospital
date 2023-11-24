@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+.wrapper_homepages{
+  color:green;
+  margin: 0 auto;
+  font-size: 24px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 10%;
+
+  div.to_doctor_page{
+    transition: font-size 0.5s
+
+  };
+
+  div.to_doctor_page:hover{
+    font-size: 32px;
+    background: url()
+
+  };
+
+  div.to_patients_page{
+    transition: font-size 0.5s;
+  };
+
+  div.to_patients_page:hover{
+    font-size: 32px;
+    background: url()
+  };
+
+  a {
+    text-decoration: none
+
+  }
+
+
+}
