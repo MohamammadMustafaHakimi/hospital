@@ -4,9 +4,12 @@
   margin: 0 auto;
   font-size: 24px;
   display: flex;
-  text-align: center;
+  text-align: left;
   flex-direction: column;
-  margin-top: 10%;
+  position: absolute;
+  padding-left: 4%;
+  padding-top: 4%;
+
 
   div.to_doctor_page{
     transition: font-size 0.5s
@@ -34,4 +37,13 @@
   }
 
 
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
