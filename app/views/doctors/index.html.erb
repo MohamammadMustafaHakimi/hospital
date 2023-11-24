@@ -3,9 +3,9 @@
 <div class="card-group">
   <% @doctors.each do |doctor| %>
   <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-    <div class="card-header">Header</div>
+    <div class="card-header"><%= "#{doctor.id}" %></div>
       <div class="card-body">
-      <h5 class="card-title"><%= link_to "#{doctor.title}.#{doctor.first_name} #{doctor.last_name.capitalize}", doctor_path(doctor) %></h5>
+      <h5 class="card-title"><%= link_to "#{doctor.title} #{doctor.first_name} #{doctor.last_name.capitalize}", doctor_path(doctor) %></h5>
       <p class="card-text"><%= doctor.available ? "available" : "unavailable" %></p>
       </div>
     </div>

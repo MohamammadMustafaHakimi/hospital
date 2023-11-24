@@ -1,0 +1,11 @@
+.doctor_patient_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.patient_card {
+  padding: 20px;
+  background-color: grey;
+  border-radius: 10px;
+}
