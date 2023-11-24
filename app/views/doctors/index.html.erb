@@ -1,9 +1,9 @@
-<h1>The Doctors List</h1>
+<h1 class="h1-header">The Doctors List</h1>
 
 <div class="card-group">
   <% @doctors.each do |doctor| %>
   <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-    <div class="card-header"><%= "#{doctor.id}" %></div>
+    <div class="card-header">👨‍⚕️</div>
       <div class="card-body">
       <h5 class="card-title"><%= link_to "#{doctor.title} #{doctor.first_name} #{doctor.last_name.capitalize}", doctor_path(doctor) %></h5>
       <p class="card-text"><%= doctor.available ? "available" : "unavailable" %></p>
@@ -13,4 +13,4 @@
 </div>
 
 
-<%= link_to "Add new Doctor", new_doctor_path, class:"btn btn-secondary btn-lg"%>
+<%= link_to "Create Your Doctor 👨‍⚕️", "#", class: "btn btn-flat" %>

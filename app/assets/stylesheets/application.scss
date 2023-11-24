@@ -12,11 +12,12 @@
 @import "pages/index";
 
 body {
-  background-color: #eee;
+  background-color: #35747b;
+  padding-top: 10%;
 }
 
 h1 {
-  color: red
+  color: rgb(158, 16, 118)
 }
 
 li {
@@ -29,3 +30,15 @@ a {
   color: green;
 }
 
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #024b0c;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+}
