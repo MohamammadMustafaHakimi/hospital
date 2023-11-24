@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
    root "homepages#index"
   resources :doctors do
-    resources :educations, only: [:new, :create]
+    resources :educations, only: [:new, :create, :edit]
   end
 
   resources :educations, only: [:edit, :update]
