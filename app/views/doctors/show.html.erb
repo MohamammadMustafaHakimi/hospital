@@ -27,5 +27,5 @@
 <% end %>
 
 
-<%= link_to "Edit", edit_doctor_path %>
-<%= link_to "Delete", doctor_path(@doctor), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to "Edit", edit_doctor_path, class:"btn btn-secondary btn-lg"%>
+<%= link_to "Delete", doctor_path(@doctor), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-warning btn-lg" %>
